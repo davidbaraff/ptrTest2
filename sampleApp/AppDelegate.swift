@@ -16,7 +16,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func do1() {
         let then = Date()
-        var rt = RT()
+        let rt = RT()
         let refVal = rt.call_that_copies()
         for _ in 0...5000 {
             for _ in 0...5000 {
@@ -48,7 +48,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        var rt = RT()
         DispatchQueue.global().async {
             self.do1()
             self.do2()
